@@ -8,9 +8,11 @@ export default new Router({
     {
       path: '/',
       name: 'index',
+      mode: 'hash',
       component: require('@/components/index').default
     },
     {
+      mode: 'hash',
       path: '*',
       redirect: '/'
     }

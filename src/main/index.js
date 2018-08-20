@@ -31,10 +31,15 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     height: winheight,
     useContentSize: false,
-    width: winwidth
+    width: winwidth,
+    show:false
   })
-
   mainWindow.loadURL(winURL)
+  mainWindow.on('ready-to-show', function() {
+      mainWindow.show();
+      mainWindow.focus();
+  });
+  
 
   mainWindow.on('closed', () => {
     mainWindow = null
